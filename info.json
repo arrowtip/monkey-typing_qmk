@@ -1,13 +1,13 @@
 {
-    "keyboard_name": "monkey_typing/v1",
     "maintainer": "arrowtip",
     "manufacturer": "monkey",
     "url": "https://github.com",
     "usb": {
-        "pid": "0x0001",
         "vid": "0x9000",
-        "device_version": "0.0.1",
         "max_power": 500,
+        "shared_endpoint": {
+            "keyboard": false,
+        },
     },
 
     "development_board": "elite_c",
@@ -26,20 +26,20 @@
         "nkro": true,
         "split": true,
         "mousekey": true,
+        "rgblight": true,
+        "audio": false,
     },
-    "matrix": {
-        "diode_direction": "COL2ROW",
-        "matrix_pins": {
-            "rows": ["F7", "B1", "B3", "B2", "B6"],
-            "cols": ["D4", "C6", "D7", "F4", "F5", "F6"],
-        },
+    "diode_direction": "COL2ROW",
+    "matrix_pins": {
+        "rows": ["F7", "B1", "B3", "B2", "B6"],
+        "cols": ["D4", "C6", "D7", "F4", "F5", "F6"],
     },
     "split": {
         "enabled": true,
         "encoder": {
             "right": {
                 "rotary": [
-                    {"pin_a": "B4", "pin_b": "B4", "resolution": 4},
+                    {"pin_a": "B4", "pin_b": "B4", "resolution": 2},
                 ],
             },
         },
@@ -58,13 +58,30 @@
     },
     "encoder": {
         "rotary": [
-            {"pin_a": "B4", "pin_b": "B5", "resolution": 4},
+            {"pin_a": "B4", "pin_b": "B5", "resolution": 2},
         ],
     },
     "ws2812": {
         "driver": "bitbang",
         "pin": "E6",
         "rgbw": true,
+    },
+    "rgblight": {
+        "led_count": 6,
+        "animations": {
+            "static_light": true,
+            "breathing": true,
+        },
+        "brightness_steps": 20,
+        "saturation_steps": 20,
+        "default": {
+            "on": true,
+            "animation": "breathing",
+            "val": 100,
+        },
+        "driver": "ws2812",
+        "sleep": true,
+        "split_count": [3, 3],
     },
     "layouts": {
         "LAYOUT_iso": {
@@ -97,46 +114,46 @@
                 {"matrix": [3, 4], "x": 4, "y": 3},
                 {"matrix": [3, 5], "x": 5, "y": 3},
 
-                {"matrix": [4, 1], "x": 2, "y": 4},
+                {"matrix": [4, 1], "x": 2, "y": 4, "encoder": 0},
                 {"matrix": [4, 2], "x": 3, "y": 4},
                 {"matrix": [4, 3], "x": 4, "y": 4},
                 {"matrix": [4, 4], "x": 5, "y": 4},
                 {"matrix": [4, 5], "x": 6, "y": 4},
 
 
-                {"matrix": [5, 0], "x": 14, "y": 0},
-                {"matrix": [5, 1], "x": 13, "y": 0},
-                {"matrix": [5, 2], "x": 12, "y": 0},
-                {"matrix": [5, 3], "x": 11, "y": 0},
-                {"matrix": [5, 4], "x": 10, "y": 0},
-                {"matrix": [5, 5], "x": 9, "y": 0},
+                {"matrix": [5, 0], "x": 9, "y": 0},
+                {"matrix": [5, 1], "x": 10, "y": 0},
+                {"matrix": [5, 2], "x": 11, "y": 0},
+                {"matrix": [5, 3], "x": 12, "y": 0},
+                {"matrix": [5, 4], "x": 13, "y": 0},
+                {"matrix": [5, 5], "x": 14, "y": 0},
 
-                {"matrix": [6, 0], "x": 14, "y": 1},
-                {"matrix": [6, 1], "x": 13, "y": 1},
-                {"matrix": [6, 2], "x": 12, "y": 1},
-                {"matrix": [6, 3], "x": 11, "y": 1},
-                {"matrix": [6, 4], "x": 10, "y": 1},
-                {"matrix": [6, 5], "x": 9, "y": 1},
+                {"matrix": [6, 0], "x": 9, "y": 1},
+                {"matrix": [6, 1], "x": 10, "y": 1},
+                {"matrix": [6, 2], "x": 11, "y": 1},
+                {"matrix": [6, 3], "x": 12, "y": 1},
+                {"matrix": [6, 4], "x": 13, "y": 1},
+                {"matrix": [6, 5], "x": 14, "y": 1},
 
-                {"matrix": [7, 0], "x": 14, "y": 2},
-                {"matrix": [7, 1], "x": 13, "y": 2},
-                {"matrix": [7, 2], "x": 12, "y": 2},
-                {"matrix": [7, 3], "x": 11, "y": 2},
-                {"matrix": [7, 4], "x": 10, "y": 2},
-                {"matrix": [7, 5], "x": 9, "y": 2},
+                {"matrix": [7, 0], "x": 9, "y": 2},
+                {"matrix": [7, 1], "x": 10, "y": 2},
+                {"matrix": [7, 2], "x": 11, "y": 2},
+                {"matrix": [7, 3], "x": 12, "y": 2},
+                {"matrix": [7, 4], "x": 13, "y": 2},
+                {"matrix": [7, 5], "x": 14, "y": 2},
 
-                {"matrix": [8, 0], "x": 14, "y": 3},
-                {"matrix": [8, 1], "x": 13, "y": 3},
-                {"matrix": [8, 2], "x": 12, "y": 3},
-                {"matrix": [8, 3], "x": 11, "y": 3},
-                {"matrix": [8, 4], "x": 10, "y": 3},
-                {"matrix": [8, 5], "x": 9, "y": 3},
+                {"matrix": [8, 0], "x": 9, "y": 3},
+                {"matrix": [8, 1], "x": 10, "y": 3},
+                {"matrix": [8, 2], "x": 11, "y": 3},
+                {"matrix": [8, 3], "x": 12, "y": 3},
+                {"matrix": [8, 4], "x": 13, "y": 3},
+                {"matrix": [8, 5], "x": 14, "y": 3},
 
-                {"matrix": [9, 1], "x": 12, "y": 4},
-                {"matrix": [9, 2], "x": 11, "y": 4},
+                {"matrix": [9, 1], "x": 8, "y": 4},
+                {"matrix": [9, 2], "x": 9, "y": 4},
                 {"matrix": [9, 3], "x": 10, "y": 4},
-                {"matrix": [9, 4], "x": 9, "y": 4},
-                {"matrix": [9, 5], "x": 8, "y": 4},
+                {"matrix": [9, 4], "x": 11, "y": 4},
+                {"matrix": [9, 5], "x": 12, "y": 4, "encoder": 1},
             ]
         }
     }
