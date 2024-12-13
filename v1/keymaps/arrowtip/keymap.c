@@ -3,6 +3,13 @@
 
 #include QMK_KEYBOARD_H
 
+#define DE_AE RALT(KC_Q)
+#define DE_OE RALT(KC_P)
+#define DE_UE RALT(KC_Y)
+#define DE_SS RALT(KC_S)
+
+#define TRN KC_TRNS
+
 enum layer_names {
     BASE_LAYER = 0,
     FN_LAYER,
@@ -32,14 +39,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                  KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
         KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                                  KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                                  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                          KC_PAUS, KC_LGUI, KC_ESC,  KC_SPC,  MO(FN_LAYER),       KC_ENT,   KC_BSPC, KC_LCTL, KC_LALT, KC_RGUI
+                          KC_PAUS, KC_LCTL, KC_ESC,  KC_SPC,  MO(FN_LAYER),       KC_ENT,   KC_BSPC, KC_LGUI, KC_LALT, KC_RGUI
     ),
     [FN_LAYER] = LAYOUT_iso(
-        KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
-        KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
-        KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,
-        KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,                                  KC_TRNS,    KC_TRNS,    KC_LBRC,    KC_RBRC,    KC_TRNS,    KC_TRNS,
-                                KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,            KC_TRNS,  KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS
+        TRN,        TRN,        TRN,        TRN,        TRN,        TRN,                                      TRN,        TRN,        TRN,        TRN,        TRN,        KC_EQL,
+        TRN,        TRN,        TRN,        TRN,        TRN,        TRN,                                      TRN,        DE_UE,      TRN,        DE_OE,      TRN,        TRN,
+        TRN,        DE_AE,      DE_SS,      TRN,        TRN,        TRN,                                      KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    TRN,        TRN,
+        TRN,        TRN,        TRN,        TRN,        TRN,        TRN,                                      TRN,        TRN,        KC_LBRC,    KC_RBRC,    TRN,        TRN,
+                                TRN,        TRN,        TRN,        TRN,        TRN,                TRN,      TRN,        TRN,        TRN,        KC_TRNS
     )
 };
 
