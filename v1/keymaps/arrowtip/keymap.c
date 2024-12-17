@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_PAUS, KC_LCTL, KC_ESC,  KC_SPC,  MO(FN_LAYER),       KC_ENT,   KC_BSPC, KC_LGUI, KC_LALT, KC_RGUI
     ),
     [FN_LAYER] = LAYOUT_iso(
-        TRN,        TRN,        TRN,        TRN,        TRN,        TRN,                                      TRN,        TRN,        TRN,        TRN,        TRN,        KC_EQL,
+        TRN,        TRN,        TRN,        TRN,        TRN,        KC_SLEP,                                      TRN,        TRN,        TRN,        TRN,        TRN,        KC_EQL,
         TRN,        TRN,        TRN,        TRN,        TRN,        TRN,                                      TRN,        DE_UE,      TRN,        DE_OE,      TRN,        TRN,
         TRN,        DE_AE,      DE_SS,      TRN,        TRN,        TRN,                                      KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    TRN,        TRN,
         TRN,        TRN,        TRN,        TRN,        TRN,        TRN,                                      TRN,        TRN,        KC_LBRC,    KC_RBRC,    TRN,        TRN,
