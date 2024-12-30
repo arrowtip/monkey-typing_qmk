@@ -8,6 +8,7 @@
         "shared_endpoint": {
             "keyboard": false,
         },
+        "suspend_wakeup_delay": 100,
     },
 
     "development_board": "elite_c",
