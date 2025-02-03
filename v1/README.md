@@ -1,22 +1,24 @@
 # monkey_typing/v1
+<p align="center">
+<img src="./images/full.jpg" width="42%">
+<img src="./images/pcb-art.jpg" width="56%">
+</p>
 
-![monkey_typing/v1](imgur.com image replace me!)
+This is the QMK firmware repository for the monkey_typing/v1 split
+ergonomic keyboard.
+For the PCB and build instructions, please refer to the
+[hardware repository](https://github.com/arrowtip/monkey-typing_v1).
 
-*A short description of the keyboard/project*
+## Flashing of Firmware
+First set up your local QMK environment 
+([tutorial](https://docs.qmk.fm/#/getting_started_build_tools)).
 
-* Keyboard Maintainer: [Jakob Schmid](https://github.com/arrowtip)
-* Hardware Supported: *The PCBs, controllers supported*
+Then run
+```bash
+$ qmk flash -kb monkey_typing/v1 -km arrowtip
+```
+To put the keyboard into bootloader mode, press the reset button underneath
+the TRRS jack.
 
-Make example for this keyboard (after setting up your build environment):
-
-    make monkey_typing/v1:default
-
-Flashing example for this keyboard:
-
-    make monkey_typing/v1:default:flash
-
-See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
-
-## Bootloader
-
-* **Physical reset button**: Briefly press the button on the back of the PCB - some may have pads you must short instead
+> [!CAUTION]
+> Never plug the TRRS cable in or out while the keyboard is connected via USB!
