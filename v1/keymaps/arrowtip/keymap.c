@@ -7,6 +7,7 @@
 #define DE_OE RALT(KC_P)
 #define DE_UE RALT(KC_Y)
 #define DE_SS RALT(KC_S)
+#define KC_EUR RALT(KC_5)
 
 #define TRN KC_TRNS
 
@@ -43,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [FN_LAYER] = LAYOUT_iso(
         TRN,        TRN,        TRN,        TRN,        TRN,        KC_SLEP,                                  KC_PSCR,    TRN,        TRN,        TRN,        TRN,        KC_EQL,
-        TRN,        TRN,        TRN,        TRN,        TRN,        TRN,                                      TRN,        DE_UE,      TRN,        DE_OE,      TRN,        TRN,
+        TRN,        TRN,        TRN,        KC_EUR,     TRN,        TRN,                                      TRN,        DE_UE,      TRN,        DE_OE,      TRN,        TRN,
         TRN,        DE_AE,      DE_SS,      TRN,        TRN,        TRN,                                      KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    TRN,        TRN,
         TRN,        TRN,        TRN,        TRN,        TRN,        TRN,                                      TRN,        TRN,        KC_LBRC,    KC_RBRC,    TRN,        TRN,
                                 TRN,        TRN,        TRN,        TRN,        TRN,                TRN,      KC_DEL,        TRN,        TRN,        KC_TRNS
